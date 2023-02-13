@@ -9,6 +9,8 @@ sudo -u postgres passwd
 
 # postgresql
  sudo su - postgres
+ psql
+ 
 # create user
 create user jiaolucheng with password '199392287';
 # create database

@@ -1,0 +1,27 @@
+# install postgresql
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get -y install postgresql
+
+# change postgres passwd
+sudo -u postgres passwd
+
+# postgresql
+ sudo su - postgres
+# create user
+create user jiaolucheng with password '199392287';
+# create database
+create database testdb owner jiaolucheng;
+# grant
+grant all privileges on database testdb to jiaolucheng;
+\q
+
+# add user
+sudo adduser jiaolucheng
+
+# change linux user
+su - jiaolucheng
+
+# link database
+psql -d testdb

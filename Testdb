@@ -27,3 +27,14 @@ su - jiaolucheng
 
 # link database
 psql -d testdb
+
+# change user
+su - jiaolucheng
+# link to postgres
+su postgres
+# database link disabled
+update pg_database set datallowconn = 'false' where datname = 'testdb';
+# disconnect all connections
+select pg_terminate_backend(pid) from pg_stat_activity where datname = 'testdb';
+# delete database
+drop database testdb;

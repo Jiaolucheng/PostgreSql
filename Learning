@@ -15,11 +15,13 @@ sudo -u postgres passwd
 create user jiaolucheng with password '199392287';
 # create database
 create database testdb owner jiaolucheng;
+# change database name
+alter database testdb rename to learning;
 # grant
 grant all privileges on database testdb to jiaolucheng;
 \q
 
-# add user
+# add linux user
 sudo adduser jiaolucheng
 
 # change linux user

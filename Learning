@@ -25,10 +25,10 @@ sudo adduser jiaolucheng
 # change linux user
 su - jiaolucheng
 
-# link database
+# link to database
 psql -d testdb
 
-# change user
+# change linux user
 su - jiaolucheng
 # link to postgres
 su postgres

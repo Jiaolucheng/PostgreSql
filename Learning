@@ -31,19 +31,19 @@ create database testdb owner jiaolucheng;
 alter database testdb rename to learning;
 
 # grant
-grant all privileges on database testdb to jiaolucheng;
+grant all privileges on database learning to jiaolucheng;
 
 # exit
 \q
 
 # link to database
-psql -d posthres
+psql -d postgres
 
 # database link disabled
-update pg_database set datallowconn = 'false' where datname = 'testdb';
+update pg_database set datallowconn = 'false' where datname = 'learning';
 
 # disconnect all connections
-select pg_terminate_backend(pid) from pg_stat_activity where datname = 'testdb';
+select pg_terminate_backend(pid) from pg_stat_activity where datname = 'learning';
 
 # delete database
-drop database testdb;
+drop database learning;

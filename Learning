@@ -1,3 +1,13 @@
+# linux root key set
+root
+passwd 
+
+# add linux user
+sudo adduser jiaolucheng
+
+# change linux user
+su - jiaolucheng
+
 # install postgresql
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -7,36 +17,33 @@ sudo apt-get -y install postgresql
 # change postgres passwd
 sudo -u postgres passwd
 
-# postgresql
+# link postgress
  sudo su - postgres
  psql
  
 # create user
 create user jiaolucheng with password '199392287';
+
 # create database
 create database testdb owner jiaolucheng;
+
 # change database name
 alter database testdb rename to learning;
+
 # grant
 grant all privileges on database testdb to jiaolucheng;
+
+# exit
 \q
 
-# add linux user
-sudo adduser jiaolucheng
-
-# change linux user
-su - jiaolucheng
-
 # link to database
-psql -d testdb
+psql -d posthres
 
-# change linux user
-su - jiaolucheng
-# link to postgres
-su postgres
 # database link disabled
 update pg_database set datallowconn = 'false' where datname = 'testdb';
+
 # disconnect all connections
 select pg_terminate_backend(pid) from pg_stat_activity where datname = 'testdb';
+
 # delete database
 drop database testdb;

@@ -47,3 +47,11 @@ select pg_terminate_backend(pid) from pg_stat_activity where datname = 'learning
 
 # delete database
 drop database learning;
+
+# create table
+create table
+
+# delete table
+drop table
+
+

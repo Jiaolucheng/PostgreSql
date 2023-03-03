@@ -1,7 +1,7 @@
-#this task if follower the youtuber Derekbanas, and the code come from https://github.com/derekbanas/postgresql-tutorial 
-#only use for learning
+# this task if follower the youtuber Derekbanas, and the code come from https://github.com/derekbanas/postgresql-tutorial 
+# only use for learning
 
-#create table
+# create table
 CREATE TABLE customer(
 first_name VARCHAR(30) NOT NULL,
 last_name VARCHAR(30) NOT NULL,
@@ -18,6 +18,6 @@ date_entered TIMESTAMP NOT NULL,
 id SERIAL PRIMARYKEY
 );
 
-# data entry
+# add data to table
 
 

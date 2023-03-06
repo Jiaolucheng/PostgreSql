@@ -57,4 +57,12 @@ alter table XXX rename to XXX;
 # delete table
 drop table XXX;
 
-
+# linux
+# move to folder
+cd / 
+cd ..
+cd ..//..
+# create new folder
+mkdir XXX
+# postgresql database install path
+/usr/lib/postgresql/xx/bin

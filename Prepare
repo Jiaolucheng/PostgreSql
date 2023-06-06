@@ -1,6 +1,5 @@
 # linux root key set
-root
-passwd 
+passwd root
 
 # add linux user
 sudo adduser jiaolucheng

@@ -19,7 +19,7 @@ sudo apt-get -y install postgresql
 
 
 # change postgres passwd
-\password postgres
+\password postgres;
  
 # create user
 create user jiaolucheng with password '199392287';
